@@ -69,7 +69,7 @@ if ($user_id) {
     <title>Financial Compass: Navigating your Budgeting Journey with an Interactive Website</title>
     <link rel="icon" href="SAD.jpg" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard.css?v=2">
+    <link rel="stylesheet" href="dashboard.css?v=6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--icon link-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -77,14 +77,18 @@ if ($user_id) {
 </head>
 <body>
     <div class="wrapper">
+    <button class="toggle-sidebar">
+        <i class="fa fa-bars"></i>
+        </button>
         <div class="sidebar">
+            <!-- Sidebar content -->
             <h2>Sidebar</h2>
             <ul>
-                <li><a href="dashboard.php"title= "Dashboard"><i class="fa fa-bar-chart"></i>  Dashboard</a></li>
-                <li><a href="tracker.php" title="Tracker"><i class="fa fa-table"></i>  Tracker</a></li>
-                <li><a href="add.php"title="Add"><i class="fa fa-plus"></i>  Add</a></li>
-                <li><a href="settings.php"title="Profile"><i class="fa fa-address-card"></i>  Profile</a></li>
-                <li><a href="login.php"title="Logout" onclick="return confirmLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <li><a href="dashboard.php" title="Dashboard"><i class="fa fa-bar-chart"></i> Dashboard</a></li>
+                <li><a href="tracker.php" title="Tracker"><i class="fa fa-table"></i> Tracker</a></li>
+                <li><a href="add.php" title="Add"><i class="fa fa-plus"></i> Add</a></li>
+                <li><a href="settings.php" title="Profile"><i class="fa fa-address-card"></i> Profile</a></li>
+                <li><a href="login.php" title="Logout" onclick="return confirmLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
         <div class="main">
@@ -221,8 +225,22 @@ if ($user_id) {
         </form>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js">
+
+    </script>
     <script src="chatbot.js"></script>
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector(".sidebar");
+        const toggleButton = document.querySelector(".toggle-sidebar");
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+    });
+
+    </script>
         </div>
     </div>
     
