@@ -26,7 +26,7 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>Your Budgeting Journey</h1>
+                <h1>Navigate Your Budgeting Journey</h1>
                 <p>Take control of your finances with our interactive planner. Start your path to financial freedom today!</p>
                 <a href="login.php" class="cta-button">Start Budgeting Now</a>
             </div>
