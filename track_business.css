@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(to right, #fff, #cccccc);
+}
+
+/* Wrapper and Sidebar */
+.wrapper {
+    display: flex;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    background: #e0e6e9;
+    padding: 30px 0;
+}
+
+.wrapper .sidebar h2 {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li {
+    padding: 15px;
+}
+
+.wrapper .sidebar ul li a {
+    color: black;
+    display: block;
+}
+
+.wrapper .sidebar ul li a i {
+    color: #374f59;
+    margin-right: 10px;
+}
+
+.wrapper .sidebar ul li:hover {
+    background: #9db3c1;
+}
+
+.wrapper .sidebar ul li:hover a {
+    color: #fff;
+}
+
+/* Main Section */
+.wrapper .main {
+    width: 100%;
+    margin-left: 400px;
+}
+
+.wrapper .main .header {
+    padding: 20px;
+    background: transparent;
+    color: rgb(12, 12, 12);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Table Container Styles */
+.wrapper .main .info {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 80px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+/* Table Base Structure */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+}
+
+/* Table Header */
+thead th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
+    padding: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border: none;
+    border-bottom: 2px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+}
+
+/* Table Body */
+tbody td {
+    padding: 16px;
+    color: #475569;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+/* Row Hover Effect */
+tbody tr:hover td {
+    background-color: #f1f5f9;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: #fee2e2;
+}
+
+.remove-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #ef4444;
+}
+
+/* Edit Button Styling */
+.edit-btn {
+    background-color: #4CAF50; /* A soft green color */
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edit-btn:active {
+    background-color: #388e3c; /* Even darker on click */
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.edit-btn:focus {
+    outline: 2px solid #81c784;
+    outline-offset: 2px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Edit Form Styling */
+#editForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Button Styling */
+.update-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+
+/* New Inputs for Fixed Cost and Variable Cost */
+.form-group input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Styling the columns for Fixed and Variable Cost */
+tbody td:nth-child(6), tbody td:nth-child(7) {
+    text-align: center;
+    color: #555;
+}
+
+/* Modal Form Alignment */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

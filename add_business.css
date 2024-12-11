@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f2f5; /* Light grayish background */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    position: relative;
+    width: 370px;
+    height: 710px;
+    background: #ffffff;
+    color: #333;
+    padding: 80px 30px 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headertext {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 1.9rem;
+}
+
+.field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 9px;
+    border: none;
+    background: #e0e6e9;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.field::placeholder {
+    color: #666;
+}
+
+.forget-pass {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.forget-pass a {
+    color: #374f59; 
+}
+
+.input-submit {
+    height: 40px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #28b52d; 
+    color: #fff;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.input-submit:hover {
+    background-color: #219724; 
+}
+
+.cancel-btn {
+    height: 40px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #e41919; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #b11f1f; 
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%; 
+        padding: 50px 20px; 
+        height: auto; 
+    }
+
+    .headertext {
+        font-size: 20px; 
+        margin-bottom: 15px;
+    }
+
+    .field {
+        font-size: 0.8rem; 
+    }
+
+    .input-submit, .cancel-btn {
+        height: 40px; 
+    }
+
+    .forget-pass {
+        text-align: center; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .login-box {
+        width: 100%;
+        padding: 40px 15px;
+    }
+
+    .headertext {
+        font-size: 18px;
+    }
+
+    .input-submit, .cancel-btn {
+        height: 45px; 
+    }
+}
