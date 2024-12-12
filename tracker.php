@@ -72,7 +72,7 @@ if (!$db) {
         </button>
         <div class="sidebar">
             <!-- Sidebar content -->
-            <h2>Sidebar</h2>
+            <h2>Sideba</h2>
             <ul>
                 <li><a href="dashboard.php" title="Dashboard"><i class="fa fa-bar-chart"></i> Dashboard</a></li>
                 <li><a href="tracker.php" title="Tracker"><i class="fa fa-table"></i> Tracker</a></li>
