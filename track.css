@@ -20,6 +20,40 @@ body {
     scroll-behavior: smooth;
 }
 
+.sidebar {
+    position: fixed;
+    left: -350px; /* Hidden by default */
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: #ffffff;
+    color: #000000;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0; /* Slide in when open */
+}
+
+.toggle-sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: transparent;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-sidebar i {
+    font-size: 20px;
+}
+
 .wrapper .sidebar {
     position: fixed;
     width: 350px;
@@ -60,11 +94,12 @@ body {
 /* Main Section */
 .wrapper .main {
     width: 100%;
-    margin-left: 400px;
 }
 
 .wrapper .main .header {
     padding: 20px;
+    margin-left: 35px;
+    margin-top: 8px;
     background: transparent;
     color: rgb(12, 12, 12);
     border-radius: 2px;

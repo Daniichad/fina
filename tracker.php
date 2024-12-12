@@ -59,22 +59,26 @@ if (!$db) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="track.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="track.css?v=2">
+    <link rel="stylesheet" href="modal.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="SAD.jpg" type="image/x-icon"/> 
     <title>Financial Compass: Navigating your Budgeting Journey with an Interactive Website</title>
 </head>
 <body>
     <div class="wrapper">
+    <button class="toggle-sidebar">
+        <i class="fa fa-bars"></i>
+        </button>
         <div class="sidebar">
+            <!-- Sidebar content -->
             <h2>Sidebar</h2>
             <ul>
-                <li><a href="dashboard.php"title= "Dashboard"><i class="fa fa-bar-chart"></i>  Dashboard</a></li>
-                <li><a href="tracker.php" title="Tracker"><i class="fa fa-table"></i>  Tracker</a></li>
-                <li><a href="add.php"title="Add"><i class="fa fa-plus"></i>  Add</a></li>
-                <li><a href="settings.php"title="Profile"><i class="fa fa-address-card"></i>  Profile</a></li>
-                <li><a href="login.php"title="Logout" onclick="return confirmLogout()"><i class="fa fa-sign-out"></i>  Logout</a></li>
+                <li><a href="dashboard.php" title="Dashboard"><i class="fa fa-bar-chart"></i> Dashboard</a></li>
+                <li><a href="tracker.php" title="Tracker"><i class="fa fa-table"></i> Tracker</a></li>
+                <li><a href="add.php" title="Add"><i class="fa fa-plus"></i> Add</a></li>
+                <li><a href="settings.php" title="Profile"><i class="fa fa-address-card"></i> Profile</a></li>
+                <li><a href="login.php" title="Logout" onclick="return confirmLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
         <div class="main">
@@ -164,5 +168,16 @@ if (!$db) {
 
     <script src="logout.js"></script>
     <script src="modal2.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const sidebar = document.querySelector(".sidebar");
+        const toggleButton = document.querySelector(".toggle-sidebar");
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+    });
+
+    </script>
 </body>
 </html>

@@ -30,6 +30,7 @@ body {
     color: #000000;
     transition: left 0.3s ease;
     z-index: 1000;
+    transition: left 0.3s ease;
 }
 
 .sidebar.open {
@@ -92,11 +93,12 @@ body {
 
 .wrapper .main {
     width: 100%;
-    margin-left: 400px;
+    margin-left: 0px;
 }
 
 .wrapper .main .header {
     padding: 20px;
+    margin-left: 40px;
     background: transparent;
     color: rgb(12, 12, 12);
     border-radius: 2px;
@@ -509,37 +511,51 @@ body.show-emoji-picker .chat-controls #emoji-picker {
 }
 
 @media screen and (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: unset;
-        transition: none;
-    }
-    .wrapper .main {
-        margin-left: 0;
-    }
-    .wrapper .sidebar h2 {
-        font-size: 1.5rem;
-    }
-    .wrapper .main .info {
-        margin: 20px;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .wrapper .main .info .budgetcard,
-    .wrapper .main .info .totalcard {
-        width: 100%;
-        margin: 0;
-    }
-    .user-chart-card {
-        width: 100%;
-        margin: 20px 0;
-    }
-    .wrapper .sidebar ul li {
-        font-size: 14px;
-    }
+  .wrapper {
+      flex-direction: column;
+  }
+  .header {
+      margin-left: -40px;;
+  }
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: unset;
+      transition: none;
+  }
+  .wrapper .main {
+      margin-left: 0;
+  }
+  .wrapper .sidebar h2 {
+      font-size: 1.5rem;
+  }
+  .wrapper .main .info {
+      margin: 20px;
+      flex-direction: row; /* Align budget and total cards in a row */
+      gap: 20px;
+  }
+  .wrapper .main .info .budgetcard,
+  .wrapper .main .info .totalcard {
+      width: calc(50% - 10px); /* Reduce width to fit in a row */
+      margin: 0;
+      font-size: 14px; /* Make the text smaller */
+      padding: 15px; /* Adjust padding for better spacing */
+  }
+  .wrapper .main .info .budgetcard p,
+  .wrapper .main .info .totalcard p {
+      font-size: 16px; /* Smaller text for card content */
+  }
+  .wrapper .main .info .budgetcard:hover,
+  .wrapper .main .info .totalcard:hover {
+      transform: scale(1.05);
+  }
+  .user-chart-card {
+      width: 100%;
+      margin: 20px 0;
+  }
+  .wrapper .sidebar ul li {
+      font-size: 14px;
+  }
 }
+
